@@ -11,22 +11,23 @@ import Spring
 class AnimationViewController: UIViewController {
     @IBOutlet var springView: SpringView!
     @IBOutlet var springButton: SpringButton!
+    @IBOutlet var animationLabel: UILabel!
     
     var animationProperties = SpringAnimationProperties.getRandomInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        animationLabel.text = animationProperties.description
     }
-
 
     @IBAction func springAnimationButton(_ sender: SpringButton) {
         runAnimation()
+        animationLabel.text = animationProperties.description
+        
         animationProperties = SpringAnimationProperties.getRandomInstance()
         springButton.setTitle(animationProperties.animation, for: .normal)
     }
-    
-    
-    
 
     private func runAnimation() {
         springView.animation = animationProperties.animation
@@ -40,6 +41,3 @@ class AnimationViewController: UIViewController {
         springView.animate()
     }
 }
-
-
-

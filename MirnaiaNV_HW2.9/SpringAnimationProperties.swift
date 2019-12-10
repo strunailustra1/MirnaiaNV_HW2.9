@@ -19,14 +19,27 @@ struct SpringAnimationProperties {
     let rotate: CGFloat
 }
 
+extension SpringAnimationProperties: CustomStringConvertible {
+    var description: String {
+        "animation: \(animation)\n" +
+        "curve: \(curve)\n" +
+        String(format: "force: %.2f\n", force) +
+        String(format: "delay: %.2f\n", delay) +
+        String(format: "duration: %.2f\n", duration) +
+        String(format: "damping: %.2f\n", damping) +
+        String(format: "velocity: %.2f\n", velocity) +
+        String(format: "rotate: %.2f", rotate)
+    }
+}
+
 extension SpringAnimationProperties {
     static func getRandomInstance() -> SpringAnimationProperties {
         SpringAnimationProperties(
             animation: SpringAnimationData.animations.randomElement()?.rawValue ?? Spring.AnimationCurve.EaseIn.rawValue,
             curve: SpringAnimationData.animationCurves.randomElement()?.rawValue ?? Spring.AnimationCurve.EaseIn.rawValue,
             force: CGFloat.random(in: 0...2),
-            delay: CGFloat.random(in: 0...0.7),
-            duration: CGFloat.random(in: 1...2),
+            delay: CGFloat.random(in: 0...0.3),
+            duration: CGFloat.random(in: 0.5...1.5),
             damping: CGFloat.random(in: 0...3),
             velocity: CGFloat.random(in: 0...2),
             rotate: CGFloat.random(in: 0...1)
