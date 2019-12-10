@@ -6,15 +6,18 @@
 //  Copyright © 2019 Наталья Мирная. All rights reserved.
 //
 
-import UIKit
+import Spring
 
 class ViewController: UIViewController {
-
+    @IBOutlet var springView: SpringView!
+    @IBOutlet var springButton: SpringButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func startAnimation(_ sender: SpringButton) {
+    }
 }
 
