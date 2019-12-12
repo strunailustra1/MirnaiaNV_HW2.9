@@ -35,7 +35,7 @@ extension SpringAnimationProperties: CustomStringConvertible {
 extension SpringAnimationProperties {
     static func getRandomInstance() -> SpringAnimationProperties {
         SpringAnimationProperties(
-            animation: SpringAnimationData.animations.randomElement()?.rawValue ?? Spring.AnimationCurve.EaseIn.rawValue,
+            animation: SpringAnimationData.animations.randomElement()?.rawValue ?? Spring.AnimationPreset.FadeIn.rawValue,
             curve: SpringAnimationData.animationCurves.randomElement()?.rawValue ?? Spring.AnimationCurve.EaseIn.rawValue,
             force: CGFloat.random(in: 0...2),
             delay: CGFloat.random(in: 0...0.3),

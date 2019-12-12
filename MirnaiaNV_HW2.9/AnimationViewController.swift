@@ -33,7 +33,7 @@ class AnimationViewController: UIViewController {
         springView.animation = animationProperties.animation
         springView.curve = animationProperties.curve
         springView.force = animationProperties.force
-        springView.delay = animationProperties.damping
+        springView.delay = animationProperties.delay
         springView.duration = animationProperties.duration
         springView.damping = animationProperties.damping
         springView.velocity = animationProperties.velocity
